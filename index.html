@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess</title>
+  <style>
+  .ch-wrap {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #a2ff59;
+  }
+  .ch-item {
+    width: 50px;
+    height: 50px;
+    float: left;
+  }
+  .ch-brown {
+    background: #a1693a
+  }
+  .ch-black {
+    background: #111;
+  }
+  </style>
+
+</head>
+<body>
+    <div id="area" class="ch-wrap">
+        
+    </div>
+</body>
+<script>
+var chessWrap = document.querySelector('.ch-wrap');
+
+var i = 0, count = 0,countfor_id=1; Id=8;
+//Draw Chess Area
+while (count < 8 * 8) {
+   
+    
+    
+  var item = document.createElement('div');
+  chessWrap.appendChild(item);
+
+  item.classList.add('ch-item');
+
+  if (i && i % 2)
+      {
+          item.classList.add('ch-black')
+      }
+    else{
+        item.classList.add('ch-brown')
+    }
+    
+    switch(countfor_id)
+        {
+            case 1:
+                item.id="A"+Id;
+                break;
+            case 2:
+                item.id="B"+Id;
+                break;
+            case 3:
+                item.id="C"+Id;
+                break;
+            case 4:
+                item.id="D"+Id;
+                break;
+            case 5:
+                item.id="I"+Id;
+                break;
+            case 6:
+                item.id="F"+Id;
+                break;
+            case 7:
+                item.id="G"+Id;
+                break;
+            case 8:
+                item.id="H"+Id;
+                break;
+        }
+    if(countfor_id==8)
+        {
+            countfor_id=1;
+            Id-=1;
+        }
+    else{
+        countfor_id+=1;
+    }
+    if(((i + 2) % 9))
+        {
+             i += 1;
+        }
+    else{
+         i+=2;
+    }
+    
+  count++;
+}
+    
+    </script>
+
+
+</html>
